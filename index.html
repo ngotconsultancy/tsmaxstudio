@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Biên bản bắt bệnh — Max Studio (Toản Tis) | Ngọt Studio Consultancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0A0A; --ink2:#131211; --ink3:#1A1816; --cream:#F5F0E8;
+  --gold:#C9A84C; --gold-light:#E8C96A;
+  --forest:#2A4A3A; --rust:#B5432A; --rust-light:#E0705A;
+  --warm-gray:#8A7F74; --light-gray:#D4CECC;
+  --display:'Playfair Display',serif;
+  --body:'Be Vietnam Pro',sans-serif;
+  --mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:var(--body);font-size:15px;
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+header{padding:52px 0 8px}
+.kick{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.kick::before{content:'';width:34px;height:1px;background:var(--gold);flex-shrink:0}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,5vw,50px);line-height:1.06;margin-bottom:16px}
+h1 em{font-style:italic;color:var(--gold)}
+.lede{color:var(--light-gray);font-size:16px;max-width:68ch;line-height:1.8;margin-bottom:12px}
+.lede b{color:var(--cream);font-weight:600}
+.stance{font-family:var(--display);font-style:italic;font-size:17px;color:var(--gold-light);
+  border-left:2px solid var(--gold);padding:6px 0 6px 16px;margin:24px 0 0;max-width:62ch;line-height:1.55}
+
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,.26);
+  border:1px solid rgba(201,168,76,.26);border-radius:3px;margin:34px 0 6px;overflow:hidden}
+.strip div{background:var(--ink);padding:16px 18px}
+.strip .lb{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--warm-gray);margin-bottom:7px}
+.strip .vl{font-family:var(--display);font-size:24px;font-weight:700;color:var(--gold);line-height:1.1}
+.strip .vl small{display:block;font-family:var(--body);font-size:11.5px;font-weight:400;
+  color:var(--warm-gray);margin-top:5px;letter-spacing:0}
+@media(max-width:780px){.strip{grid-template-columns:repeat(2,1fr)}}
+
+section{padding:48px 0 0}
+.sh{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid rgba(245,240,232,.14);
+  padding-bottom:10px;margin-bottom:24px}
+.sh .no{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--gold);flex-shrink:0}
+.sh h2{font-family:var(--display);font-size:clamp(21px,3vw,29px);font-weight:700;color:var(--cream);line-height:1.2}
+.sh .tail{margin-left:auto;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--warm-gray);white-space:nowrap}
+@media(max-width:640px){.sh .tail{display:none}}
+
+p.body{color:var(--light-gray);max-width:74ch;margin-bottom:15px;line-height:1.8}
+p.body b{color:var(--cream);font-weight:600}
+p.body .hl{color:var(--gold-light);font-weight:600}
+
+h3.sub{font-family:var(--display);font-size:20px;font-weight:700;color:var(--cream);
+  margin:30px 0 12px;line-height:1.3}
+h3.sub span{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--gold);
+  display:block;margin-bottom:7px;font-weight:400}
+
+table{width:100%;border-collapse:collapse;margin:8px 0 18px;font-size:13.5px}
+th{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);text-align:left;padding:10px 12px;border-bottom:1px solid rgba(201,168,76,.32);font-weight:400}
+td{padding:11px 12px;border-bottom:1px solid rgba(245,240,232,.08);color:var(--light-gray);
+  vertical-align:top;line-height:1.6}
+td b{color:var(--cream);font-weight:600}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.emph td{background:rgba(201,168,76,.08);color:var(--cream)}
+tr.emph td b{color:var(--gold-light)}
+tr.warn td{background:rgba(181,67,42,.12)}
+tr.warn td b{color:var(--rust-light)}
+@media(max-width:640px){table{font-size:12.5px}th,td{padding:9px 8px}}
+
+.callout{background:var(--ink3);border-left:3px solid var(--gold);padding:18px 20px;
+  margin:20px 0;border-radius:0 3px 3px 0}
+.callout .cl{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:9px}
+.callout p{color:var(--cream);font-size:15px;line-height:1.75;margin-bottom:10px}
+.callout p:last-child{margin-bottom:0}
+.callout.red{border-left-color:var(--rust-light)}
+.callout.red .cl{color:var(--rust-light)}
+
+.bignum{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+@media(max-width:780px){.bignum{grid-template-columns:1fr}}
+.bn{border:1px solid rgba(201,168,76,.3);border-radius:3px;padding:20px;background:rgba(201,168,76,.05)}
+.bn .t{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--warm-gray);margin-bottom:10px}
+.bn .v{font-family:var(--display);font-size:34px;font-weight:900;color:var(--gold);line-height:1;
+  font-variant-numeric:tabular-nums;margin-bottom:9px}
+.bn .d{font-size:13px;color:var(--light-gray);line-height:1.65}
+.bn.alert{border-color:rgba(181,67,42,.45);background:rgba(181,67,42,.08)}
+.bn.alert .v{color:var(--rust-light)}
+
+.knot{border:1px solid rgba(245,240,232,.14);border-radius:3px;margin-bottom:14px;overflow:hidden}
+.knoth{display:grid;grid-template-columns:auto 1fr;gap:0 16px;align-items:center;
+  padding:15px 20px;background:rgba(245,240,232,.04)}
+.knotn{font-family:var(--display);font-weight:900;font-size:26px;color:var(--gold);line-height:.9;
+  font-variant-numeric:tabular-nums}
+.knott{font-family:var(--display);font-size:19px;font-weight:700;color:var(--cream);line-height:1.3}
+.knotb{padding:18px 20px}
+.knotb p{font-size:14px;color:var(--light-gray);line-height:1.75;margin-bottom:11px}
+.knotb p:last-child{margin-bottom:0}
+.knotb b{color:var(--cream);font-weight:600}
+.ev{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.01em;
+  border-top:1px solid rgba(201,168,76,.2);padding-top:10px;margin-top:12px;line-height:1.6;display:block}
+.ev::before{content:'NGHE ĐƯỢC TRONG BUỔI · ';color:var(--warm-gray);letter-spacing:.14em;font-size:9px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.box{border:1px solid rgba(245,240,232,.14);border-radius:3px;overflow:hidden}
+.box.yes{border-color:rgba(201,168,76,.4)}
+.box.no{border-color:rgba(181,67,42,.35)}
+.boxh{padding:12px 18px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;background:rgba(245,240,232,.05);color:var(--warm-gray)}
+.box.yes .boxh{background:rgba(201,168,76,.12);color:var(--gold-light)}
+.box.no .boxh{background:rgba(181,67,42,.12);color:var(--rust-light)}
+.box ul{list-style:none;padding:16px 18px}
+.box li{position:relative;padding-left:22px;margin-bottom:11px;font-size:14px;
+  color:var(--light-gray);line-height:1.65}
+.box li:last-child{margin-bottom:0}
+.box li::before{content:'—';position:absolute;left:0;color:var(--warm-gray)}
+.box.yes li::before{content:'✓';color:var(--gold);font-size:12px;top:1px}
+.box.no li::before{content:'✕';color:var(--rust-light);font-size:11px;top:2px}
+.box li b{color:var(--cream);font-weight:600}
+
+.calc{border:1px solid rgba(201,168,76,.38);border-radius:3px;background:rgba(201,168,76,.05);
+  padding:24px;margin:24px 0}
+.calc .ch{font-family:var(--display);font-size:20px;font-weight:700;color:var(--cream);margin-bottom:6px}
+.calc .cs{font-size:13px;color:var(--warm-gray);margin-bottom:20px;line-height:1.6}
+.calc label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.calc input[type=range]{width:100%;accent-color:var(--gold);height:4px;margin-bottom:6px;cursor:pointer}
+.crow{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;
+  color:var(--warm-gray);margin-bottom:20px}
+.cout{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.25);
+  border:1px solid rgba(201,168,76,.25);border-radius:3px;overflow:hidden}
+@media(max-width:700px){.cout{grid-template-columns:1fr}}
+.cout div{background:var(--ink);padding:16px}
+.cout .cl2{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--warm-gray);margin-bottom:8px;line-height:1.4}
+.cout .cv{font-family:var(--display);font-size:27px;font-weight:700;line-height:1.05;
+  font-variant-numeric:tabular-nums;color:var(--gold)}
+.cout .cv.neg{color:var(--rust-light)}
+.cout .cn{font-size:11.5px;color:var(--warm-gray);margin-top:7px;line-height:1.5}
+.calcv{font-family:var(--display);font-size:30px;font-weight:900;color:var(--gold);
+  font-variant-numeric:tabular-nums}
+
+.map{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:13.5px}
+.map th{background:rgba(201,168,76,.1)}
+.map td:first-child{color:var(--light-gray)}
+.map td:last-child{color:var(--gold-light);font-weight:500}
+
+.del{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0}
+@media(max-width:820px){.del{grid-template-columns:1fr}}
+.dl{border:1px solid rgba(201,168,76,.3);border-radius:3px;padding:20px;background:rgba(201,168,76,.04)}
+.dl.key{border-color:var(--gold);background:rgba(201,168,76,.10)}
+.dl .n{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--gold);margin-bottom:10px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dl .n em{font-style:normal;font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);background:var(--gold);padding:2px 8px;border-radius:40px;font-weight:500}
+.dl h3{font-family:var(--display);font-size:19px;font-weight:700;color:var(--cream);
+  line-height:1.3;margin-bottom:9px}
+.dl p{font-size:13.5px;color:var(--light-gray);line-height:1.7}
+
+.ses{border:1px solid rgba(245,240,232,.14);border-radius:3px;margin-bottom:14px;overflow:hidden}
+.ses.gift{border-color:rgba(201,168,76,.38)}
+.sesh{display:grid;grid-template-columns:auto 1fr auto;gap:0 16px;align-items:center;
+  padding:15px 20px;background:rgba(245,240,232,.04)}
+.ses.gift .sesh{background:rgba(201,168,76,.09)}
+.sesn{font-family:var(--display);font-weight:900;font-size:27px;color:var(--gold);line-height:.9}
+.sest{font-family:var(--display);font-size:19px;font-weight:700;color:var(--cream);line-height:1.25}
+.sesd{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);text-align:right;white-space:nowrap}
+@media(max-width:640px){.sesh{grid-template-columns:auto 1fr;gap:0 12px}.sesd{grid-column:2;text-align:left;margin-top:8px}}
+.sesb{padding:18px 20px;font-size:14px;color:var(--light-gray);line-height:1.75}
+.sesb b{color:var(--cream);font-weight:600}
+
+.price{border:1px solid var(--gold);border-radius:3px;background:rgba(201,168,76,.09);
+  padding:26px;margin:26px 0;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
+@media(max-width:700px){.price{grid-template-columns:1fr}}
+.price .pl{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:9px}
+.price h3{font-family:var(--display);font-size:26px;font-weight:700;color:var(--cream);
+  line-height:1.2;margin-bottom:9px}
+.price p{font-size:13.5px;color:var(--light-gray);line-height:1.7;max-width:52ch}
+.price .amt{font-family:var(--display);font-size:46px;font-weight:900;color:var(--gold);
+  line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums}
+.price .amt small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  color:var(--warm-gray);font-weight:400;margin-top:9px;text-transform:uppercase}
+
+.assump{border:1px dashed rgba(245,240,232,.22);border-radius:3px;padding:20px;margin:22px 0;
+  background:rgba(245,240,232,.02)}
+.assump .al{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--warm-gray);margin-bottom:12px;display:block}
+.assump table{margin:0;font-size:12.5px}
+.assump td{padding:8px 10px}
+.tag{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  padding:2px 7px;border-radius:40px;white-space:nowrap}
+.tag.real{background:rgba(201,168,76,.18);color:var(--gold-light)}
+.tag.est{background:rgba(138,127,116,.2);color:var(--warm-gray)}
+
+footer{margin-top:56px;border-top:1px solid rgba(201,168,76,.28);padding:34px 0 56px}
+.fgrid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+@media(max-width:700px){.fgrid{grid-template-columns:1fr}}
+footer h3{font-family:var(--display);font-size:24px;font-weight:700;color:var(--cream);margin-bottom:10px}
+footer p{font-size:14px;color:var(--light-gray);line-height:1.75;max-width:58ch}
+.contact{font-family:var(--mono);font-size:13px;color:var(--gold);line-height:2;letter-spacing:.03em}
+.contact b{display:block;font-family:var(--display);font-size:19px;color:var(--cream);
+  letter-spacing:0;margin-bottom:5px;font-weight:700}
+.sig{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--warm-gray);margin-top:26px;padding-top:18px;border-top:1px solid rgba(245,240,232,.1)}
+
+@media print{
+  body{background:#fff;color:#111}
+  .wrap{max-width:100%}
+  section{padding-top:26px;break-inside:avoid}
+  h1,.sh h2,.knott,.dl h3,footer h3,.price h3,.calc .ch{color:#111}
+  p.body,td,.knotb p,.box li,.dl p,footer p,.cout .cn{color:#333}
+  .strip div,.cout div{background:#fff}
+  .bn,.calc,.callout,.knot,.box,.dl,.price,.assump{background:#fafafa}
+  .bn .v,.strip .vl,.cout .cv,.price .amt{color:#8a6d1f}
+  .calc{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kick">Ngọt — Studio Consultancy · Biên bản sau buổi Tâm sự cùng chủ Studio</div>
+  <h1>Bốn năm, hai vợ chồng, 600 triệu một năm.<br>Và <em>ba người đầu tiên</em> anh phải tuyển trong đời.</h1>
+  <p class="lede">Gửi anh Toản — chủ Max Studio, sắp thành <b>Monni</b>. Đây là những gì tôi nghe được trong buổi Tâm sự, cộng với những gì tôi đọc ra từ chính những con số anh đưa. Tôi viết ra giấy để anh đọc lại một mình, không có tôi ngồi bên cạnh.</p>
+  <p class="lede">Anh nói vấn đề cần giải quyết đầu tiên là <b>nhân sự — phải đảm bảo được 3 người</b>. Tôi đồng ý đó là việc phải làm trước. Và điều làm tôi chú ý nhất là: <b>suốt bốn năm, Max Studio chạy bằng đúng hai vợ chồng — anh chưa từng tuyển ai.</b> Nghĩa là lần tuyển đầu tiên trong đời anh sẽ diễn ra cùng lúc ba vị trí, trên một mặt bằng 700m² đang tính tiền từng ngày, và không có một quy trình nào để dựa vào.</p>
+  <p class="lede">Tôi viết bản này để chỉ ra <b>những chỗ người tuyển lần đầu hay ngã</b> — trước khi anh ký hợp đồng mặt bằng, chứ không phải sau.</p>
+  <div class="stance">Tôi không dạy nghề. Tôi cố vấn vận hành cho doanh nghiệp studio.</div>
+
+  <div class="strip">
+    <div><div class="lb">Đang vận hành</div><div class="vl">4 năm<small>Hai vợ chồng, không nhân sự</small></div></div>
+    <div><div class="lb">Doanh thu</div><div class="vl">40–50tr<small>mỗi tháng · AOV 1,6tr</small></div></div>
+    <div><div class="lb">Mặt bằng sắp chuyển</div><div class="vl">700m²<small>thuê 20tr/tháng</small></div></div>
+    <div><div class="lb">Đã định đầu tư</div><div class="vl">400tr<small>cho cơ sở mới</small></div></div>
+  </div>
+</header>
+
+<section>
+  <div class="sh"><span class="no">01</span><h2>Những gì tôi nghe được</h2><span class="tail">Số liệu do anh Toản cung cấp</span></div>
+  <p class="body">Trước khi nói đến vấn đề, tôi ghi lại nguyên văn bức tranh anh mô tả. Nếu có chỗ nào tôi nghe sai, anh sửa giúp tôi — vì toàn bộ phần sau được xây trên những con số này.</p>
+
+  <table>
+    <tr><th style="width:32%">Mảng</th><th>Hiện trạng</th></tr>
+    <tr><td><b>Mô hình</b></td><td>4 năm hoạt động, <b>chỉ hai vợ chồng</b>. Chồng: chụp + hậu kỳ. Vợ: makeup + hoạt náo viên.</td></tr>
+    <tr><td><b>Dịch vụ</b></td><td>Baby, Newborn. Sắp tới làm thêm Family.</td></tr>
+    <tr><td><b>Doanh thu</b></td><td>40–50tr/tháng. Năm ngoái hơn 600tr. Trung bình đơn hàng 1,6tr.</td></tr>
+    <tr><td><b>Chi phí</b></td><td>Thuê nhà 6–7tr · điện nước mạng 1tr · lương chồng 12tr · lương vợ 18tr · <b>mua sắm (chưa có con số)</b></td></tr>
+    <tr><td><b>Lợi nhuận</b></td><td>15–20%</td></tr>
+    <tr><td><b>Marketing</b></td><td>Truyền miệng + đăng hình kèm caption trên Facebook. <b>80% khách đến từ trang cá nhân của vợ.</b> Chồng đăng Zalo.</td></tr>
+    <tr><td><b>Bán hàng</b></td><td>Vợ tư vấn chính, <b>tỷ lệ chốt 60%</b>. Khách quay lại ổn định khoảng 50%.</td></tr>
+    <tr><td><b>CSKH · Kế toán · R&amp;D</b></td><td>Vợ tiếp khách và tư vấn trang phục · vợ làm kế toán · vợ tìm hiểu và order concept, chồng sản xuất hình ảnh.</td></tr>
+    <tr><td><b>Công cụ quản lý</b></td><td>Note iPhone của vợ · thông tin gửi miệng trực tiếp cho chồng · lưu trữ Google Drive + máy tính · <b>hoá đơn viết tay trong một cuốn sổ</b> · số liệu kế toán trên app · Capture One, Photoshop, Evoto.</td></tr>
+    <tr><td><b>Công suất</b></td><td>Tối đa 7–8 khách/ngày.</td></tr>
+    <tr><td><b>Thị trường</b></td><td>Bán kính 10km chỉ có 1 studio cá nhân. Mật độ 2.100 người/km², gần 70.000 dân trong 15km². Khách đánh giá tiệm cưới quanh đó không chỉn chu, không chuyên nghiệp ở mảng này.</td></tr>
+    <tr class="emph"><td><b>Anh tự nhận vấn đề</b></td><td>① Tuyển được nhân sự (thợ chụp, hoạt náo viên) ② Đạo cụ — trang phục để lung tung khó tìm kiếm ③ Chưa biết marketing cho thương hiệu của mình</td></tr>
+    <tr class="emph"><td><b>Mục tiêu mới</b></td><td>Doanh thu 100tr trong 2–3 tháng đầu · lợi nhuận 30–40% · cần 2 ekip · đầu tư cơ sở mới 400tr</td></tr>
+    <tr class="emph"><td><b>Mục tiêu cuối</b></td><td>Cả hai vợ chồng chuyển hẳn về kinh doanh và quản lý.</td></tr>
+  </table>
+
+  <div class="callout">
+    <span class="cl">Điều đầu tiên tôi muốn nói</span>
+    <p>Bán kính 10km chỉ có một studio cá nhân, 70.000 dân trong tầm với, đối thủ gần nhất bị khách chê không chuyên nghiệp — <b>đây là một thị trường trống mà rất ít chủ studio có được.</b> Anh không có vấn đề về thị trường. Anh có vấn đề về năng lực nắm lấy nó.</p>
+    <p>Đó là lý do tôi viết bản này thẳng, không vòng vo. Vì cơ hội thế này không mở mãi.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">02</span><h2>Ba con số làm tôi phải dừng lại</h2><span class="tail">Tính từ số liệu của anh</span></div>
+
+  <h3 class="sub"><span>Con số thứ nhất</span>Studio 600 triệu một năm, nhưng chưa biết chắc mình lãi bao nhiêu</h3>
+  <p class="body">Tôi thử ráp các con số anh đưa: 45tr doanh thu, trừ thuê nhà 6,5tr, trừ điện nước mạng 1tr, trừ lương hai vợ chồng 30tr — còn <b>7,5tr, đúng 16,7%</b>, khớp với con số 15–20% anh nói.</p>
+  <p class="body">Nghĩa là trong cách anh đang tính, <b>khoản "mua sắm" đang bằng 0</b>. Nhưng nó không bằng 0 — mỗi buổi chụp đều tiêu tiền: trang phục, đạo cụ, phụ kiện, mỹ phẩm makeup, in ảnh, album, khung. Đây là câu hỏi tôi đã hỏi anh trong buổi Tâm sự và anh chưa có con số.</p>
+
+  <table>
+    <tr><th>Nếu chi phí trực tiếp mỗi đơn thật sự là...</th><th class="num">Số tiền/tháng</th><th class="num">Lợi nhuận thật</th></tr>
+    <tr><td>0% (cách anh đang tính)</td><td class="num">0</td><td class="num"><b>+7,5tr · 16,7%</b></td></tr>
+    <tr><td>10% doanh thu</td><td class="num">4,5tr</td><td class="num">+3,0tr · 6,7%</td></tr>
+    <tr class="warn"><td>15% doanh thu</td><td class="num">6,75tr</td><td class="num"><b>+0,75tr · 1,7%</b></td></tr>
+    <tr class="warn"><td>20% doanh thu</td><td class="num">9,0tr</td><td class="num"><b>−1,5tr · lỗ</b></td></tr>
+  </table>
+
+  <p class="body">Tôi không nói anh đang lỗ. Tôi nói <b class="hl">anh không biết</b> — và đó là một chuyện khác, nguy hiểm hơn. Khi còn hai vợ chồng, không biết cũng chưa sao: tiền vào tài khoản là tiền của mình, hết tháng còn dư là ổn. Nhưng khi anh bắt đầu trả lương cho người thứ ba, thứ tư, thứ năm, <b>con số này quyết định anh trả họ bao nhiêu thì còn sống được</b>. Anh không thể xây thang lương trên một nền đất chưa đo.</p>
+
+  <h3 class="sub"><span>Con số thứ hai — con số tôi lo nhất</span>100 triệu không phải mục tiêu. Đó là điểm hoà vốn.</h3>
+  <p class="body">Anh đặt mục tiêu 100tr/tháng trong 2–3 tháng đầu ở cơ sở mới. Tôi ráp thử cấu trúc chi phí của cơ sở 700m² với 3 nhân sự:</p>
+
+  <table>
+    <tr><th>Khoản</th><th class="num">Hiện tại</th><th class="num">Cơ sở mới</th><th class="num">Chênh</th></tr>
+    <tr><td>Thuê mặt bằng</td><td class="num">6,5tr</td><td class="num">20,0tr</td><td class="num">+13,5tr</td></tr>
+    <tr><td>Điện nước mạng <span class="tag est">ước</span></td><td class="num">1,0tr</td><td class="num">3,0tr</td><td class="num">+2,0tr</td></tr>
+    <tr><td>Lương 3 nhân sự <span class="tag est">ước</span></td><td class="num">0</td><td class="num">24,0tr</td><td class="num">+24,0tr</td></tr>
+    <tr><td>Marketing <span class="tag est">ước</span></td><td class="num">~0</td><td class="num">8,0tr</td><td class="num">+8,0tr</td></tr>
+    <tr class="emph"><td><b>Cộng (chưa tính lương anh chị)</b></td><td class="num"><b>7,5tr</b></td><td class="num"><b>55,0tr</b></td><td class="num"><b>+47,5tr</b></td></tr>
+    <tr><td>Lương hai vợ chồng</td><td class="num">30,0tr</td><td class="num">30,0tr</td><td class="num">—</td></tr>
+    <tr><td>Hoàn vốn 400tr trong 24 tháng</td><td class="num">0</td><td class="num">16,7tr</td><td class="num">+16,7tr</td></tr>
+  </table>
+
+  <p class="body">Lấy biên đóng góp 85% (tức chi phí trực tiếp mỗi đơn 15% — con số tôi ước, anh cần xác nhận lại), ta có các ngưỡng doanh thu sau:</p>
+
+  <div class="bignum">
+    <div class="bn"><div class="t">Hoà vốn — chưa tính lương anh chị</div><div class="v">64,7tr</div><div class="d">40 đơn/tháng. Dưới mức này thì studio không tự nuôi nổi bộ máy.</div></div>
+    <div class="bn alert"><div class="t">Hoà vốn — có lương anh chị 30tr</div><div class="v">100tr</div><div class="d"><b>62,5 đơn/tháng.</b> Đúng bằng mục tiêu anh đặt. Đạt mục tiêu = về số 0.</div></div>
+    <div class="bn alert"><div class="t">Để anh chị không nghèo đi so với hôm nay</div><div class="v">120,5tr</div><div class="d">75 đơn/tháng — bao gồm cả tiền hoàn vốn 400tr.</div></div>
+  </div>
+
+  <div class="callout red">
+    <span class="cl">Đây là chỗ tôi muốn anh đọc kỹ</span>
+    <p><b>Mục tiêu 100 triệu của anh chính là điểm hoà vốn của mô hình mới.</b> Đạt được nó, anh chị vẫn lấy đủ 30tr lương như hôm nay, nhưng doanh nghiệp lãi 0 đồng và 400 triệu đã bỏ ra chưa thu về đồng nào.</p>
+    <p>Còn lợi nhuận 30–40% anh mong muốn? Với cấu trúc chi phí này, nó rơi vào khoảng <b>155–190 triệu doanh thu mỗi tháng</b> — tức <b>97 đến 118 đơn</b>, gấp <b>3,4 đến 4,2 lần</b> số đơn hiện tại của anh.</p>
+  </div>
+
+  <div class="calc">
+    <div class="ch">Anh tự kéo thử</div>
+    <div class="cs">Kéo thanh doanh thu để xem ở cơ sở mới, mỗi tháng còn lại bao nhiêu cho hai vợ chồng — sau khi trả mặt bằng, điện nước, lương 3 nhân sự, marketing, chi phí trực tiếp 15% và khoản hoàn vốn 400tr chia 24 tháng. Mốc hôm nay của anh chị là <b style="color:var(--gold-light)">30,8tr/tháng</b>.</div>
+    <label>Doanh thu mỗi tháng · <span class="calcv" id="dtv">100</span> triệu</label>
+    <input type="range" id="dt" min="45" max="220" value="100" step="5">
+    <div class="crow"><span>45tr (hôm nay)</span><span>100tr (mục tiêu)</span><span>220tr</span></div>
+    <div class="cout">
+      <div><div class="cl2">Số đơn phải làm</div><div class="cv" id="o1">62,5</div><div class="cn" id="o1n">đơn/tháng · 2,4 đơn mỗi ngày</div></div>
+      <div><div class="cl2">Còn lại cho hai vợ chồng</div><div class="cv" id="o2">13,3tr</div><div class="cn" id="o2n">sau khi trừ hoàn vốn 400tr</div></div>
+      <div><div class="cl2">So với hôm nay (30,8tr)</div><div class="cv" id="o3">−17,4tr</div><div class="cn" id="o3n">mỗi tháng</div></div>
+    </div>
+  </div>
+
+  <h3 class="sub"><span>Con số thứ ba</span>Mỗi tháng mặt bằng mới chạy mà chưa đủ người: 15,5 triệu bốc hơi</h3>
+  <p class="body">Hợp đồng thuê tính tiền từ ngày ký, không đợi anh tuyển xong người. Riêng chênh lệch mặt bằng và điện nước giữa cơ sở cũ và mới đã là <b>15,5tr mỗi tháng</b> — khoản này phát sinh kể cả khi anh chưa tuyển xong người, chưa chạy được ekip thứ hai, công suất vẫn y như hôm nay.</p>
+  <p class="body">Cộng thêm 400 triệu đã nằm chết trong cơ sở vật chất. <b class="hl">Từ ngày ký hợp đồng, mỗi tháng chậm tuyển là một tháng anh trả tiền cho một cái studio chỉ dùng được một phần ba.</b></p>
+</section>
+
+<section>
+  <div class="sh"><span class="no">03</span><h2>Sáu chỗ người tuyển lần đầu hay ngã</h2><span class="tail">Sáu nút thắt</span></div>
+  <p class="body">Anh nói vấn đề là "tuyển được nhân sự". Tôi nghĩ khác: <b>tuyển dụng không phải bệnh, tuyển dụng là triệu chứng.</b> Bệnh nằm ở chỗ Max Studio sau 4 năm vẫn chưa được đóng gói thành một thứ mà người ngoài gia đình có thể bước vào và làm được việc — vì chưa bao giờ cần. Hai vợ chồng hiểu nhau bằng một câu nói là xong.</p>
+  <p class="body">Giờ thì cần. Và đây là sáu nút thắt tôi nhìn ra từ chính lời anh kể — <b>cả sáu đều là thứ người đã tuyển vài lần sẽ tự biết, còn người tuyển lần đầu thì không.</b></p>
+
+  <div class="knot">
+    <div class="knoth"><span class="knotn">01</span><span class="knott">Không có gì để bàn giao cho người mới</span></div>
+    <div class="knotb">
+      <p>Toàn bộ studio đang chạy bằng trí nhớ của hai vợ chồng. Vợ ghi vào note iPhone rồi <b>nói miệng trực tiếp cho chồng</b>. Hoá đơn viết tay trong một cuốn sổ. Không có quy trình viết ra, không có bảng phân việc, không có tiêu chuẩn thành phẩm.</p>
+      <p>Bốn năm qua chưa cần viết ra, vì người nhận việc luôn là vợ hoặc chồng. Nhưng người lạ bước vào thì không có chỗ nào để bám. Họ không biết một ca chụp Newborn phải làm gì trước, gì sau; không biết thế nào là ảnh đạt; không biết hỏi ai khi kẹt. <b>Hai tuần là họ nghỉ, hoặc làm sai và anh phải làm lại.</b></p>
+      <p>Đây là cái bẫy lớn nhất của lần tuyển đầu tiên: chủ tưởng mình đang tuyển người, <b>thực ra đang tuyển người về để tự đoán ra công việc.</b></p>
+      <span class="ev">Vợ note qua note iPhone · thông tin gửi trực tiếp cho chồng · lưu hoá đơn viết tay trong 1 cuốn sổ tay</span>
+    </div>
+  </div>
+
+  <div class="knot">
+    <div class="knoth"><span class="knotn">02</span><span class="knott">Chưa có chân dung ứng viên, nên đang tìm sai chỗ và nói sai lời</span></div>
+    <div class="knotb">
+      <p>"Cần một thợ chụp" không phải chân dung ứng viên. Thợ chụp mới ra nghề, thợ chụp cưới chuyển sang, hay thợ đã chụp bé 2 năm — ba người hoàn toàn khác nhau về lương, về thời gian đào tạo, về chỗ tìm ra họ, và về lý do họ đồng ý làm cho anh.</p>
+      <p>Chưa vẽ được chân dung thì tin tuyển dụng viết chung chung, đăng ở chỗ người đó không đọc, và <b>người đến phỏng vấn là người tình cờ thấy tin, chứ không phải người anh cần.</b></p>
+      <p>Người tuyển lần đầu hay nghĩ "cứ đăng rồi ai đến thì xem". Thực tế: <b>chất lượng người đến quyết định 80% kết quả, và nó được định đoạt trước khi anh gặp ai</b> — ở chỗ anh viết tin thế nào và đăng ở đâu.</p>
+    </div>
+  </div>
+
+  <div class="knot">
+    <div class="knoth"><span class="knotn">03</span><span class="knott">Không biết trả lương bao nhiêu, vì không biết mỗi đơn hàng lãi bao nhiêu</span></div>
+    <div class="knotb">
+      <p>Quay lại con số thứ nhất ở trên: khoản "mua sắm" chưa có số, nên giá vốn mỗi đơn hàng chưa có. Không biết một ca chụp còn lại bao nhiêu thì <b>không có cách nào định được trả thợ chụp 8tr hay 12tr thì studio vẫn sống.</b></p>
+      <p>Còn một dấu hiệu nữa tôi để ý: lương vợ 18tr, lương chồng 12tr. Tôi không bàn đúng sai — tôi chỉ nói rằng con số đó đang được đặt theo cảm tính của hai người trong nhà, chứ chưa theo giá trị mà vị trí đó tạo ra. <b>Khi người ngoài vào, cảm tính không dùng được nữa</b> — họ sẽ so với thị trường, và họ sẽ hỏi làm tốt thì tăng lương thế nào.</p>
+    </div>
+  </div>
+
+  <div class="knot">
+    <div class="knoth"><span class="knotn">04</span><span class="knott">Người giỏi nhất trong studio đang làm năm việc cùng lúc — và không ai thay được</span></div>
+    <div class="knotb">
+      <p>Vợ anh đang gánh: makeup, hoạt náo viên, tư vấn bán hàng (chốt 60%), chăm sóc khách, kế toán, và tìm concept. <b>Sáu vai trên một người.</b></p>
+      <p>Chỗ nguy hiểm nhất: <b>tỷ lệ chốt 60% nằm trong đầu vợ anh</b>, chưa ai viết ra thành kịch bản. Anh tuyển hoạt náo viên và thợ chụp — tức là gỡ được phần tay chân. Nhưng phần tạo ra tiền thì vẫn nằm nguyên trên vai vợ. Khi khách tăng gấp đôi gấp ba, <b>vợ anh sẽ là nút cổ chai, và tỷ lệ chốt sẽ rơi</b> — không phải vì vợ anh kém đi, mà vì một người không nhân ba được.</p>
+    </div>
+  </div>
+
+  <div class="knot">
+    <div class="knoth"><span class="knotn">05</span><span class="knott">80% khách đến từ một trang Facebook cá nhân — tài sản đó không nhân bản được</span></div>
+    <div class="knotb">
+      <p>Anh tự nhận "chưa biết marketing cho thương hiệu của mình". Tôi nói rõ hơn mức độ: <b>thương hiệu hiện chưa tồn tại</b>. Cái đang bán được là quan hệ cá nhân của vợ anh cộng truyền miệng. Đó là một tài sản thật, nhưng nó có trần — và cái trần đó đã gần chạm rồi, vì nó đứng yên ở 45tr suốt một thời gian.</p>
+      <p>Cơ sở mới cần <b>gấp 2,7 lần số khách hiện tại</b> chỉ để anh chị không nghèo đi. Một trang cá nhân không đẻ ra gấp ba lượng khách. Và khi anh đổi tên thành Monni, <b>phần nhận diện cũ gắn với "Max Studio" trong đầu khách sẽ bị cắt một nhát</b> — đúng lúc anh cần khách nhất.</p>
+      <p>Chỗ này chưa phải việc của buổi Khai thông lần này. Nhưng tôi ghi vào đây để anh biết nó đang chờ, và nó là điểm nghẽn kế tiếp.</p>
+    </div>
+  </div>
+
+  <div class="knot">
+    <div class="knoth"><span class="knotn">06</span><span class="knott">Đạo cụ để lung tung — chuyện nhỏ ở 1 ekip, chuyện vỡ trận ở 2 ekip</span></div>
+    <div class="knotb">
+      <p>Anh nói đạo cụ và trang phục "để đó lung tung khó tìm kiếm". Khi một ekip chạy 1 khách/ngày, mất 10 phút tìm đồ là chuyện chịu được — hai vợ chồng tự biết đồ ở đâu.</p>
+      <p>Khi hai ekip chạy song song trên 700m² với 5–8 khách/ngày và người mới chưa thuộc đồ: <b>mỗi ca trễ 15 phút, ca sau dồn, khách ngồi chờ, bé quấy, ảnh xấu, khách không quay lại.</b> Đây là thứ giết tỷ lệ khách quay lại 50% mà anh đang có — tài sản quý nhất của anh sau bốn năm.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">04</span><h2>Thứ tự ưu tiên tôi đề xuất</h2><span class="tail">Và vì sao không phải thợ chụp trước</span></div>
+  <p class="body">Anh nói cần 2 ekip. Tôi kiểm tra lại bằng số: ở mức doanh thu 120tr — mức để anh chị không nghèo đi — anh cần <b>75 đơn/tháng, tức khoảng 2,9 khách mỗi ngày</b>. Trong khi anh nói công suất tối đa hiện tại đã là <b>7–8 khách/ngày</b>.</p>
+
+  <div class="two">
+    <div class="box no">
+      <div class="boxh">Điều tôi nghĩ anh đang hiểu</div>
+      <ul>
+        <li>Cần 2 ekip để <b>phục vụ được nhiều khách hơn</b></li>
+        <li>Nên tuyển <b>thợ chụp trước</b>, vì đó là vị trí tạo ra sản phẩm</li>
+        <li>Tuyển đủ 3 người rồi thì doanh thu sẽ lên theo</li>
+      </ul>
+    </div>
+    <div class="box yes">
+      <div class="boxh">Điều số liệu đang nói</div>
+      <ul>
+        <li>Công suất <b>không phải nút thắt</b> — 1 ekip đã dư sức làm 2,9 khách/ngày</li>
+        <li>Nút thắt là <b>nguồn khách</b>, và người đang giữ nguồn khách là <b>vợ anh</b></li>
+        <li>Người đầu tiên nên tuyển là người <b>gỡ vợ anh ra khỏi việc tay chân</b>, để vợ dồn sức vào bán hàng và kéo khách</li>
+        <li>Tuyển 3 người cùng lúc = +24tr chi phí cố định trong khi khách chưa tăng</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="cl">Thứ tự tôi đề xuất</span>
+    <p><b>Người thứ nhất — trợ lý studio kiêm hoạt náo:</b> gỡ vợ anh khỏi makeup phụ, dỗ bé, soạn đồ, dọn set. Rẻ nhất, dễ tuyển nhất, đào tạo nhanh nhất, và giải phóng đúng người đang tạo ra tiền.</p>
+    <p><b>Người thứ hai — thợ chụp:</b> tuyển khi số khách chạm trần một ekip, không tuyển trước. Đây là vị trí đắt nhất và lâu đào tạo nhất, nên phải tuyển đúng ngay lần đầu.</p>
+    <p><b>Người thứ ba — sale/lễ tân:</b> tuyển khi đã có kịch bản bán hàng viết ra từ cách vợ anh đang chốt 60%. Tuyển trước khi có kịch bản là ném tiền qua cửa sổ.</p>
+    <p>Đây mới là thứ tự. Còn <b>cách làm từng bước</b> — tìm ở đâu, hỏi gì, loại ai, trả bao nhiêu, giao việc thế nào — là nội dung của gói Khai thông.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">05</span><h2>Giá của một lần tuyển hỏng</h2><span class="tail">Vì sao phải làm đúng ngay lần đầu</span></div>
+  <p class="body">Ở quy mô hai vợ chồng, tuyển hỏng một người là chuyện phiền. Ở quy mô mặt bằng 20tr và 400 triệu đã bỏ ra, tuyển hỏng một người là chuyện tiền. Tôi tính thử một lần tuyển thợ chụp sai — thử việc một tháng, 50% lương, phát hiện không được thì cho nghỉ:</p>
+
+  <table>
+    <tr><th>Khoản mất</th><th class="num">Số tiền</th><th>Ghi chú</th></tr>
+    <tr><td>Lương thử việc 1 tháng</td><td class="num">4tr</td><td>50% lương thợ chụp ~8tr</td></tr>
+    <tr><td>2 tháng mặt bằng mới chạy mà chưa đủ ekip</td><td class="num">31tr</td><td>1 tháng thử việc + 1 tháng tuyển lại · chênh 15,5tr/tháng</td></tr>
+    <tr><td>Công suất của anh hụt vì phải kèm người mới</td><td class="num">chưa tính</td><td>Anh vừa chụp vừa đào tạo — giờ chụp giảm</td></tr>
+    <tr class="warn"><td><b>Tối thiểu</b></td><td class="num"><b>35tr</b></td><td><b>Và lùi tiến độ 2 tháng</b></td></tr>
+  </table>
+
+  <p class="body">Chỗ đắt không phải tiền lương — lương thử việc chỉ 4 triệu. <b class="hl">Chỗ đắt là hai tháng mặt bằng 700m² chạy không tải.</b> Đó là lý do một lần tuyển hỏng ở cơ sở cũ chỉ tốn vài triệu, còn ở cơ sở mới tốn 35 triệu cho cùng một sai lầm.</p>
+
+  <div class="callout">
+    <span class="cl">Phép so sánh tôi muốn anh tự làm</span>
+    <p>Gói Khai thông điểm nghẽn có giá <b>6.000.000đ</b> — bằng <b>17%</b> của một lần tuyển hỏng. Và anh không chỉ tuyển một lần: anh cần <b>ba người</b>, trong vòng vài tháng, dưới áp lực mặt bằng đang tính tiền.</p>
+    <p><b>Đây cũng là lần đầu anh tuyển người trong đời.</b> Người đã tuyển vài chục lần vẫn hỏng — họ chỉ hỏng ít hơn vì đã trả học phí rồi. Anh thì chưa trả, và anh đang định trả nó ở đúng thời điểm đắt nhất: khi mặt bằng đã ký, 400 triệu đã xuống, và ba vị trí cần lấp cùng lúc.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">06</span><h2>Gói Khai thông điểm nghẽn giải đúng những gì</h2><span class="tail">Bậc 03 · Ngọt Studio Consultancy</span></div>
+  <p class="body">Bảy kết quả của gói này là <b>bộ quy trình tuyển dụng hoàn chỉnh cho người làm lần đầu</b> — từ lúc chưa biết bắt đầu từ đâu cho đến khi người mới làm được việc. Tôi ánh xạ thẳng: bên trái là nút thắt của anh, bên phải là thứ anh cầm về sau hai buổi. Không có mục nào thừa, và cũng không có nút thắt nào bị bỏ lại.</p>
+
+  <table class="map">
+    <tr><th style="width:52%">Nút thắt của Max Studio</th><th>Kết quả anh nhận được</th></tr>
+    <tr><td>Chưa từng tuyển ai — không biết người mình cần đang ở đâu, đăng ở chỗ nào thì họ đọc</td><td>Hiểu các kênh tìm kiếm tuyển dụng nhân sự</td></tr>
+    <tr><td><b>Nút thắt 02</b> — "cần một thợ chụp" chưa phải chân dung ứng viên</td><td>Cách tạo ra chân dung ứng viên đúng</td></tr>
+    <tr><td>Chưa từng ngồi ghế người phỏng vấn — hỏi xong vẫn không biết người này có làm được không</td><td>Những việc cần làm cho buổi phỏng vấn</td></tr>
+    <tr><td>Không có tiêu chí loại — ai đến cũng thấy được, hoặc thấy không ai được</td><td>Cách chọn lọc ứng viên</td></tr>
+    <tr><td><b>Nút thắt 01</b> — studio chạy bằng trí nhớ, không có gì để bàn giao</td><td>Cách viết quy trình cho vị trí anh đang cần tuyển</td></tr>
+    <tr><td><b>Nút thắt 04</b> — người vào rồi vẫn không thay được ai, hai tuần là nghỉ</td><td>Cách quản lý lộ trình từ khi thử việc đến khi làm được việc</td></tr>
+    <tr><td><b>Nút thắt 03</b> — không biết trả bao nhiêu thì studio vẫn còn lãi</td><td>Cách trả lương tại vị trí đó</td></tr>
+  </table>
+
+  <p class="body">Hai nút thắt còn lại — <b>nguồn khách chỉ dựa vào trang cá nhân (05)</b> và <b>quản lý đạo cụ khi chạy 2 ekip (06)</b> — tôi không gộp vào gói này. Chúng cần cách giải khác và thời lượng khác. Chúng sẽ nằm trong <b>bản sơ lược các điểm nghẽn tiếp theo</b> mà anh cầm về, để anh biết đường đi sau đó chứ không phải giải hết trong hai buổi.</p>
+
+  <h3 class="sub"><span>Cách làm việc</span>Hai buổi 1:1, mỗi buổi hai tiếng</h3>
+
+  <div class="ses gift">
+    <div class="sesh"><span class="sesn">0</span><span class="sest">Buổi Tâm sự — anh đã làm rồi</span><span class="sesd">45–60 phút · đã xong</span></div>
+    <div class="sesb">Đọc mô hình và số thực tại của studio để nhận diện vấn đề và khai thác chuẩn điểm nghẽn lớn nhất. <b>Bản anh đang đọc chính là kết quả của buổi này.</b></div>
+  </div>
+
+  <div class="ses">
+    <div class="sesh"><span class="sesn">1</span><span class="sest">Nguyên nhân tạo ra điểm nghẽn</span><span class="sesd">2 tiếng · 1:1</span></div>
+    <div class="sesb">Mổ từng nút thắt ở phần 03 — <b>vì sao từng chỗ một sẽ làm lần tuyển đầu tiên của anh trượt</b>, không nói chung chung. Sơ lược phương án giải quyết phù hợp với nguồn lực thật của anh, không phải phương án của một studio 30 người.</div>
+  </div>
+
+  <div class="ses">
+    <div class="sesh"><span class="sesn">2</span><span class="sest">Phác đồ và cách triển khai</span><span class="sesd">2 tiếng · 1:1</span></div>
+    <div class="sesb">Giải thích phác đồ và phương án triển khai, kèm <b>cam kết triển khai</b> và làm rõ kết quả đầu ra. Anh ra khỏi buổi này với việc phải làm vào thứ Hai tuần sau, không phải với một mớ ý tưởng.</div>
+  </div>
+
+  <h3 class="sub"><span>Anh cầm về</span>Bốn tài liệu</h3>
+  <div class="del">
+    <div class="dl key">
+      <div class="n">01 <em>tiên quyết</em></div>
+      <h3>Phác đồ chi tiết giải quyết nút thắt ưu tiên</h3>
+      <p>Checklist đầy đủ. Mỗi đầu việc trả lời năm câu: <b>lý do phải làm · ai làm · làm như thế nào · làm trong bao lâu · làm xong thì thế nào.</b></p>
+    </div>
+    <div class="dl">
+      <div class="n">02</div>
+      <h3>Lộ trình 30 / 60 / 90 ngày</h3>
+      <p>Đặt việc tuyển ba người vào đúng thời điểm so với ngày anh nhận mặt bằng — để không tuyển sớm quá mà đốt lương, không muộn quá mà đốt mặt bằng.</p>
+    </div>
+    <div class="dl">
+      <div class="n">03</div>
+      <h3>Bản ghi hình hai buổi</h3>
+      <p>Để vợ anh xem lại — vì phần lớn việc phải làm nằm ở chỗ gỡ vợ anh ra khỏi sáu vai hiện tại, và chị ấy cần nghe trực tiếp chứ không nghe kể lại.</p>
+    </div>
+    <div class="dl">
+      <div class="n">04</div>
+      <h3>Sơ lược các điểm nghẽn tiếp theo</h3>
+      <p>Nút thắt 05 và 06 — nguồn khách và quản lý vận hành 2 ekip. Anh biết trước cái gì đang chờ mình sau khi tuyển xong người.</p>
+    </div>
+  </div>
+
+  <div class="price">
+    <div>
+      <div class="pl">Bậc 03 · Khai thông điểm nghẽn</div>
+      <h3>Giải một nút thắt, đến nơi đến chốn</h3>
+      <p>Hai buổi coaching 1:1, mỗi buổi hai tiếng, cộng bộ bốn tài liệu bàn giao. Buổi Tâm sự anh đã dùng rồi — chúng ta vào thẳng việc.</p>
+    </div>
+    <div class="amt">6.000.000<small>đồng</small></div>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">07</span><h2>Nếu anh không làm gì</h2><span class="tail">Kịch bản sáu tháng</span></div>
+  <p class="body">Tôi không doạ anh. Tôi chỉ chạy tiếp con số anh đã đưa, theo đúng cách anh đang làm hôm nay:</p>
+
+  <table>
+    <tr><th style="width:18%">Mốc</th><th>Chuyện gì xảy ra</th></tr>
+    <tr><td><b>Tháng 1–2</b></td><td>Ký mặt bằng 700m², bỏ 400tr sửa sang. Chi phí cố định nhảy từ 7,5tr lên 23tr. Đăng tin tuyển lần đầu, viết theo cảm tính — người đến không đúng người cần.</td></tr>
+    <tr><td><b>Tháng 3</b></td><td>Sốt ruột, tuyển đại một thợ chụp. Chưa có quy trình nên anh phải kèm tay. Giờ chụp của anh giảm, doanh thu đứng ở 45–55tr trong khi chi phí đã 23tr.</td></tr>
+    <tr class="warn"><td><b>Tháng 4</b></td><td>Hết thử việc, thợ nghỉ hoặc bị cho nghỉ. Lùi hai tháng, mặt bằng vẫn chạy không tải. Vợ anh vẫn ôm sáu vai, bắt đầu kiệt.</td></tr>
+    <tr class="warn"><td><b>Tháng 5–6</b></td><td>Doanh thu chưa chạm 100tr. Sáu tháng chênh chi phí đã đốt <b>~93tr</b>, cộng 400tr chưa thu về. Anh bắt đầu tự hỏi có nên trả mặt bằng không.</td></tr>
+  </table>
+
+  <p class="body">Kịch bản này không phải vì anh kém. Nó xảy ra vì <b>anh mang cách vận hành của một studio hai người sang một studio bảy người</b> — và cách đó không co giãn được. Bốn năm qua anh không cần tuyển ai, nên cũng không có lý do gì để xây bộ khung cho người thứ ba đứng. <b>Việc chưa từng làm thì chưa từng sai — nhưng cũng chưa từng học.</b></p>
+
+  <div class="callout">
+    <span class="cl">Điều tôi tin</span>
+    <p>Anh có thị trường trống trong bán kính 10km, 70.000 dân, đối thủ bị khách chê, tỷ lệ chốt 60% và khách quay lại 50%. <b>Những con số đó nói rằng anh chị làm nghề giỏi.</b> Thứ anh thiếu không phải tay nghề, cũng không phải quyết tâm — anh đã dám bỏ 400 triệu.</p>
+    <p>Thứ anh thiếu là <b>bộ khung để người khác làm được việc mà không cần anh đứng bên cạnh</b>. Đó đúng là thứ tôi làm.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sh"><span class="no">08</span><h2>Những con số tôi ước — anh sửa giúp tôi</h2><span class="tail">Minh bạch giả định</span></div>
+  <p class="body">Tôi không giấu chỗ nào là số của anh, chỗ nào là số tôi ước. Nếu một giả định dưới đây sai, phần tính toán ở mục 02 sẽ đổi — và tôi muốn anh bắt được nó ngay chứ không phải sau khi đã ký hợp đồng mặt bằng.</p>
+
+  <div class="assump">
+    <span class="al">Bảng giả định</span>
+    <table>
+      <tr><th style="width:38%">Khoản</th><th class="num" style="width:16%">Giá trị dùng</th><th>Nguồn</th></tr>
+      <tr><td>Doanh thu tháng</td><td class="num">45tr</td><td><span class="tag real">anh đưa</span> giữa khoảng 40–50tr</td></tr>
+      <tr><td>Trung bình đơn hàng</td><td class="num">1,6tr</td><td><span class="tag real">anh đưa</span></td></tr>
+      <tr><td>Thuê nhà hiện tại</td><td class="num">6,5tr</td><td><span class="tag real">anh đưa</span> giữa khoảng 6–7tr</td></tr>
+      <tr><td>Thuê mặt bằng mới</td><td class="num">20tr</td><td><span class="tag real">anh đưa</span></td></tr>
+      <tr><td>Lương hai vợ chồng</td><td class="num">30tr</td><td><span class="tag real">anh đưa</span> 12tr + 18tr</td></tr>
+      <tr><td>Đầu tư cơ sở mới</td><td class="num">400tr</td><td><span class="tag real">anh đưa</span></td></tr>
+      <tr><td>Điện nước mạng mặt bằng 700m²</td><td class="num">3tr</td><td><span class="tag est">tôi ước</span> từ 1tr hiện tại</td></tr>
+      <tr><td>Lương 3 nhân sự</td><td class="num">24tr</td><td><span class="tag est">tôi ước</span> thợ chụp 10 · hoạt náo 7 · sale 7</td></tr>
+      <tr><td>Ngân sách marketing</td><td class="num">8tr</td><td><span class="tag est">tôi ước</span> hiện anh gần như không chi</td></tr>
+      <tr><td>Chi phí trực tiếp mỗi đơn</td><td class="num">15% DT</td><td><span class="tag est">tôi ước</span> — <b>đây là con số tôi cần anh đo nhất</b></td></tr>
+      <tr><td>Thời gian hoàn vốn 400tr</td><td class="num">24 tháng</td><td><span class="tag est">tôi ước</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="fgrid">
+    <div>
+      <h3>Bước tiếp theo</h3>
+      <p>Nếu anh thấy bản này đọc đúng studio của mình, nhắn cho tôi một câu. Tôi sẽ gửi anh lịch hai buổi và một danh sách ngắn những thứ cần chuẩn bị trước buổi 1 — chủ yếu là vài con số anh cần đo trong một tuần, để buổi làm việc không mất thời gian đi đoán.</p>
+      <p style="margin-top:12px">Nếu anh đọc xong và thấy mình chưa cần đến tôi lúc này, cũng không sao — bản này là của anh, anh cứ giữ và dùng.</p>
+    </div>
+    <div class="contact">
+      <b>Đặng Thanh Quang</b>
+      Founder · Ngọt Studio<br>
+      0916.206.866
+    </div>
+  </div>
+  <div class="sig">Ngọt — Studio Consultancy · Biên bản sau buổi Tâm sự cùng chủ Studio · Max Studio (Monni) — anh Toản · 20.09.2026</div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var CM=0.85, FIX=55, HV=400/24, AOV=1.6, TODAY=30.8, DAYS=26;
+  var dt=document.getElementById('dt');
+  function f(n,d){return n.toLocaleString('vi-VN',{minimumFractionDigits:d||0,maximumFractionDigits:d||0});}
+  function render(){
+    var v=+dt.value;
+    var don=v/AOV;
+    var con=v*CM-FIX;
+    var sau=con-HV;
+    var chenh=sau-TODAY;
+    document.getElementById('dtv').textContent=v;
+    document.getElementById('o1').textContent=f(don,1);
+    document.getElementById('o1n').textContent='đơn/tháng · '+f(don/DAYS,1)+' đơn mỗi ngày';
+    var e2=document.getElementById('o2');
+    e2.textContent=(sau<0?'−':'')+f(Math.abs(sau),1)+'tr';
+    e2.className='cv'+(sau<TODAY?' neg':'');
+    var e3=document.getElementById('o3');
+    e3.textContent=(chenh<0?'−':'+')+f(Math.abs(chenh),1)+'tr';
+    e3.className='cv'+(chenh<0?' neg':'');
+    document.getElementById('o3n').textContent=chenh<0?'mỗi tháng — thấp hơn hôm nay':'mỗi tháng — cao hơn hôm nay';
+  }
+  dt.addEventListener('input',render); render();
+})();
+</script>
+</body>
+</html>
